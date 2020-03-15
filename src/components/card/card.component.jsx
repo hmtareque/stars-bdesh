@@ -4,6 +4,7 @@ import './card.style.css';
 
 export const Card = (props) => (
     <div className="card-container">
-        <h1>{ props.star.name } </h1>
+        <img alt="Star" src="/images/logo192.png"/>
+        <h2>{ props.star.name } </h2>
     </div>
 );

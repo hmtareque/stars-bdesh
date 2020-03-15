@@ -48,13 +48,23 @@ class App extends Component {
                         name: 'Hussain Taimim',
                         email: '',
                     },
-                ]
+                ],
+                'searchedField': '',
         };
     }
     render() {
+
+        const {stars, searchedField} = this.state;
+        const filteredStars = stars.filter(star => 
+            star.name.toLowerCase().includes(searchedField.toLowerCase())
+            );
+
         return (
             <div className="App">
-                  <CardList stars={this.state.stars}/>
+                <input type="search" placeholder="Search" onChange={ e => this.setState({ searchedField: e.target.value }, ()  => {
+                    console.log(this.state);
+                }) } />
+                  <CardList stars={filteredStars}/>
             </div>
           );
     }
