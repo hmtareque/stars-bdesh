@@ -52,6 +52,12 @@ class App extends Component {
                 ],
                 'searchedField': '',
         };
+
+      //  this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange = (e) => {
+        this.setState({ searchedField: e.target.value });
     }
 
     render() {
@@ -63,7 +69,8 @@ class App extends Component {
 
         return (
             <div className="App">
-                <SearchBox placeholder="Search" handleChange={e => this.setState({ searchedField: e.target.value })}/>
+                <h1>Family Indexo</h1>
+                <SearchBox placeholder="Search" handleChange={this.handleChange}/>
                   <CardList stars={filteredStars}/>
             </div>
           );
