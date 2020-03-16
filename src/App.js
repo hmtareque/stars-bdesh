@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { CardList } from './components/card-list/card-list.component';
+import { SearchBox } from './components/search-box/search-box.component';
 
 class App extends Component {
     constructor() {
@@ -52,6 +53,7 @@ class App extends Component {
                 'searchedField': '',
         };
     }
+
     render() {
 
         const {stars, searchedField} = this.state;
@@ -61,9 +63,7 @@ class App extends Component {
 
         return (
             <div className="App">
-                <input type="search" placeholder="Search" onChange={ e => this.setState({ searchedField: e.target.value }, ()  => {
-                    console.log(this.state);
-                }) } />
+                <SearchBox placeholder="Search" handleChange={e => this.setState({ searchedField: e.target.value })}/>
                   <CardList stars={filteredStars}/>
             </div>
           );
