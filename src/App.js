@@ -4,10 +4,8 @@ import { CardList } from './components/card-list/card-list.component';
 import { SearchBox } from './components/search-box/search-box.component';
 
 class App extends Component {
-    constructor() {
-        super();
-
-        this.state = {
+   
+    state = {
             'stars' : [
                     { 
                         id: 'su',
@@ -51,10 +49,7 @@ class App extends Component {
                     },
                 ],
                 'searchedField': '',
-        };
-
-      //  this.handleChange = this.handleChange.bind(this);
-    }
+    };
 
     handleChange = (e) => {
         this.setState({ searchedField: e.target.value });
